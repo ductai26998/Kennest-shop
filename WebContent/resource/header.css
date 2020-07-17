@@ -1,0 +1,13 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper {
+	display: flex-inline;
+	width: 1000px;
+}
+
+.banner {
+	cursor: pointer;
+}
