@@ -1,30 +1,25 @@
 package com.ductai.kennestshop.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.ductai.kennestshop.bo.Product;
 import com.ductai.kennestshop.dao.ProductDAO;
 
 /**
- * Servlet implementation class Products
+ * Servlet implementation class DeleteProduct
  */
-@WebServlet("/products")
-public class Products extends HttpServlet {
+@WebServlet("/deleteProduct")
+public class DeleteProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Products() {
+    public DeleteProduct() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,22 +29,16 @@ public class Products extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpServletRequest httpReq = (HttpServletRequest) request;
-		HttpSession session = httpReq.getSession(false);
+		String productId = request.getParameter("id");
+		int id = Integer.parseInt(productId);
 		
-		try {
-			request.setAttribute("role", session.getAttribute("role"));
-		} catch (Exception e) {
-			request.setAttribute("role",null);
-		}
-		
+		// MODEL
 		ProductDAO productDAO = new ProductDAO();
-		ArrayList<Product> products = productDAO.getAllProduct();
-
-		request.setAttribute("products", products);
+		//delete selected book
+		productDAO.deleteProduct(id);
 		
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/products.jsp");
-		dispatcher.forward(request, response);
+		//VIEW
+		response.sendRedirect(request.getContextPath() + "/products");
 	}
 
 	/**

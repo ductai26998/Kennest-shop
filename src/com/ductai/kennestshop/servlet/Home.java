@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  * Servlet implementation class Home
  */
@@ -33,8 +34,11 @@ public class Home extends HttpServlet {
 		HttpServletRequest httpReq = (HttpServletRequest) request;
 		HttpSession session = httpReq.getSession(false);
 		
-		request.setAttribute("role", session.getAttribute("role"));
-		request.setAttribute("username", session.getAttribute("username"));
+		try {
+			request.setAttribute("role", session.getAttribute("role"));
+		} catch (Exception e) {
+			request.setAttribute("role",null);
+		}
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/WEB-INF/views/home.jsp");
 		dispatcher.forward(request, response);
 	}

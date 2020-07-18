@@ -51,8 +51,8 @@ public class Login extends HttpServlet {
 		if (user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", user.getId());	
-			session.setAttribute("username", user.getUsername());	
-			session.setAttribute("role", user.getRole());	
+			session.setAttribute("username", user.getUsername());
+			session.setAttribute("role", user.getRole());
 			response.sendRedirect(request.getContextPath() + "/products");
 		} else {
 			request.setAttribute("error", "Đăng nhập không thành công!");

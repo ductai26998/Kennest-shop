@@ -63,7 +63,7 @@
 		<div class="list-product">
 			<c:forEach items="${products}" var="product">
 				<div class="product">
-					<input type="number" value="${book.id}" name="id" hidden="true">
+					<input type="number" value="${product.id}" name="id" hidden="true">
 					<a href="productDetail?id=${product.id}"><img src="${product.image}"></a>
 					<div class="product-infor">
 						<span class="product-name">${product.productName}</span><br> 
@@ -77,6 +77,12 @@
 								</c:if>
 						</span>
 					</div>
+					<c:if test="${role == \'admin\'}">
+						<div class="active">
+							<a class="btn btn-danger" href="${pageContext.request.contextPath}/deleteProduct?id=${product.id}" role="button">XOÁ</a>
+							<a class="btn btn-info" href="${pageContext.request.contextPath}/updateProduct?id=${product.id}" role="button">CHỈNH SỬA</a>
+						</div>
+					</c:if>
 				</div>
 			</c:forEach>
 		</div>

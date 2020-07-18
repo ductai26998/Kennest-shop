@@ -60,7 +60,7 @@ public class ProductDAO {
 		try {
 			connection = ConnectionFactory.getConnection();
 			String insertSQL = "INSERT INTO products (product_name, weight, price, image, description)"
-					+ "VALUES (?, ?, ?, ?, ?, ?)";
+					+ "VALUES (?, ?, ?, ?, ?)";
 			preparedStatement = connection.prepareStatement(insertSQL);
 			preparedStatement.setString(1, productName);
 			preparedStatement.setFloat(2, weight);
@@ -104,25 +104,21 @@ public class ProductDAO {
 			String productName,
 			float weight,
 			int price,
-			boolean status,
 			String image,
 			String description) {
 		Connection connection = null;
-		Statement statement = null;
+		PreparedStatement preparedStatement = null;
 
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "UPDATE products SET "
-					+ "product_name = '" + productName
-					+ "', weight = '" + weight
-					+ "', price = '" + price
-					+ "', status = '" + status
-					+ "', image = '" + image
-					+ "', description = '" + description
-					+ "'WHERE id =" + id
-					+ ";";
-			statement = connection.createStatement();
-			statement.executeUpdate(sql);
+			String sql = "UPDATE products SET product_name = ?, weight = ?, price = ?, image = ?, description = ? WHERE id = " + id + ";";
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, productName);
+			preparedStatement.setFloat(2, weight);
+			preparedStatement.setInt(3, price);
+			preparedStatement.setString(4, image);
+			preparedStatement.setString(5, description);
+			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
