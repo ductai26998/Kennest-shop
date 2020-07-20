@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class Permission
  */
 @WebFilter(filterName = "/Permission",
-			urlPatterns = {"/administration", "/insertProduct" ,"/orderList", "/users"})
+			urlPatterns = {"/administration", "/insertProduct" ,"/orderList", "/users", "/updateProduct"})
 public class Permission implements Filter {
 
     /**
@@ -41,12 +41,11 @@ public class Permission implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
-		System.out.println("Permission filter");
 		HttpServletRequest httpReq = (HttpServletRequest) request;
 		HttpSession session = httpReq.getSession(false);
 		
-		if (session.getAttribute("role") != "admin") {
-			chain.doFilter(request,response); 
+		if (session.getAttribute("role").equals("admin")) {
+			chain.doFilter(request,response);
 		} else {
 			RequestDispatcher dispatcher = httpReq.getServletContext().getRequestDispatcher("/WEB-INF/views/accessDenied.jsp");
 	        dispatcher.forward(request, response);

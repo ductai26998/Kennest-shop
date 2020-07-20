@@ -59,8 +59,8 @@
 			<div class="photo"><img src="${product.image}"></div>
 			<div class="infor">
 				<h3 style="color: red">${product.productName}</h3>
-				<p><span style="font-weight: bold;">Giá bán: </span><span style="color: #ff5200;">${product.price}</span></p>
-				<p><span style="font-weight: bold;">Trọng lượng: </span><span style="color: #ff5200;">${product.weight}</span></p>
+				<p><span style="font-weight: bold;">Giá bán: </span><span style="color: #ff5200;">${product.price}</span> VND</p>
+				<p><span style="font-weight: bold;">Trọng lượng: </span><span style="color: #ff5200;">${product.weight}</span>g</p>
 				<p>${product.description}</p>
 				<a class="btn btn-success mx-auto" href="payment?id=${product.id}" role="button">
 					<span>MUA NGAY</span><br>
