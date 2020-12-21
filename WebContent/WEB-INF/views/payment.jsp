@@ -5,38 +5,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Yến sào Kennest</title>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resource/css/payment.css'/>">
 <style>
-.wrapper {
-	display: flex;
-	margin-top: 305px;
-	flex-direction: column;
-	width: 1000px;
-}
 
-.container {
-	background-color: #FFF;
-}
-
-.container-payment {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.container-payment .user-infor {
-	margin: 20px;
-}
-
-.order-infor {
-	display: flex;
-	flex-direction: column;
-	margin: 20px;
-}
-
-.order-infor .product-infor {
-	display: flex;
-	flex-direction: row;
-}
 </style>
 </head>
 <body>

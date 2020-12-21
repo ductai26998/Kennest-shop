@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/header.css" />
+<title>Yến sào Kennest</title>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resource/css/header.css'/>">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -23,22 +23,6 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 <style>
-body {
-	display: flex;
-	justify-content: center;
-	background-color: #DDD;
-}
-
-.header {
-	width: 1000px; position : fixed;
-	top: 0px;
-	z-index: 999;
-	position: fixed;
-}
-
-.banner {
-	cursor: pointer;
-}
 </style>
 </head>
 <body>

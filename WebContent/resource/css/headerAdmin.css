@@ -1,0 +1,16 @@
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #DDD;
+}
+
+.header {
+	width: 1000px; position : fixed;
+	top: 0px;
+	z-index: 999;
+	position: fixed;
+}
+
+.banner {
+	cursor: pointer;
+}

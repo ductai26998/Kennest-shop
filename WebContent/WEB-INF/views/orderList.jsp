@@ -5,15 +5,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Yến sào Kennest</title>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resource/css/orderList.css'/>">
 <style>
-.wrapper {
-	display: flex;
-	margin-top: 305px;
-	flex-direction: column;
-	width: 1000px;
-	background-color: #FFF;
-}
 </style>
 </head>
 <body>

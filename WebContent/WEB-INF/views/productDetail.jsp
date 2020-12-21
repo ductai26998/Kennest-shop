@@ -5,35 +5,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Yến sào Kennest</title>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resource/css/productDetail.css'/>">
 <style>
-.wrapper {
-	display: flex;
-	margin-top: 305px;
-	flex-direction: column;
-	width: 1000px;
-	background-color: #FFF;
-}
 
-.product-detail {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.product-detail .photo {
-	height: 500px;
-	margin: 20px;
-	background-size: 100% 100%;
-}
-
-.product-detail .photo img {
-	width: 100%;
-	height: 100%;
-}
-
-.product-detail .infor {
-	margin: 20px;
-}
 </style>
 </head>
 <body>

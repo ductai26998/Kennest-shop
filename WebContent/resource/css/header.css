@@ -1,11 +1,14 @@
 body {
 	display: flex;
 	justify-content: center;
+	background-color: #DDD;
 }
 
-.wrapper {
-	display: flex-inline;
-	width: 1000px;
+.header {
+	width: 1000px; position : fixed;
+	top: 0px;
+	z-index: 999;
+	position: fixed;
 }
 
 .banner {

@@ -1,0 +1,7 @@
+.wrapper {
+	display: flex;
+	margin-top: 305px;
+	flex-direction: column;
+	width: 1000px;
+	background-color: #FFF;
+}

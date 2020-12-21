@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Yến sào Kennest</title>
 </head>
 <body>
 	<h1 style="color:red">Truy cập bị từ chối!</h1>

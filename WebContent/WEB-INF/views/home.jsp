@@ -5,14 +5,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>Yến sào Kennest</title>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resource/css/home.css'/>">
 <style>
-.wrapper {
-	display: flex;
-	margin-top: 200px;
-	flex-direction: column;
-	width: 1000px;
-}
 </style>
 </head>
 <body>
