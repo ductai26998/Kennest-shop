@@ -108,16 +108,29 @@ public class ProductDAO {
 			String description) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
+		String sql = "";
 
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "UPDATE products SET product_name = ?, weight = ?, price = ?, image = ?, description = ? WHERE id = " + id + ";";
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, productName);
-			preparedStatement.setFloat(2, weight);
-			preparedStatement.setInt(3, price);
-			preparedStatement.setString(4, image);
-			preparedStatement.setString(5, description);
+			if (image != "") {
+				sql = "UPDATE products SET product_name = ?, weight = ?, price = ?, image = ?, description = ? WHERE id = " + id + ";";
+				
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, productName);
+				preparedStatement.setFloat(2, weight);
+				preparedStatement.setInt(3, price);
+				preparedStatement.setString(4, image);
+				preparedStatement.setString(5, description);
+			} else {
+				sql = "UPDATE products SET product_name = ?, weight = ?, price = ?, description = ? WHERE id = " + id + ";";
+				
+				preparedStatement = connection.prepareStatement(sql);
+				preparedStatement.setString(1, productName);
+				preparedStatement.setFloat(2, weight);
+				preparedStatement.setInt(3, price);
+				preparedStatement.setString(4, description);
+			}
+			
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

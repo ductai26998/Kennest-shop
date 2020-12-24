@@ -1,7 +1,4 @@
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/views/header.jsp=UTF-8
-encoding//WebContent/WEB-INF/views/login.jsp=UTF-8
-encoding//WebContent/WEB-INF/views/products.jsp=UTF-8
 encoding//src/com/ductai/kennestshop/servlet/Login.java=UTF-8
 encoding//src/com/ductai/kennestshop/servlet/Payment.java=UTF-8
 encoding//src/com/ductai/kennestshop/servlet/Register.java=UTF-8

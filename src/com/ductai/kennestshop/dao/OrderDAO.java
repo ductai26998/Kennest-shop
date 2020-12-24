@@ -22,7 +22,7 @@ public class OrderDAO {
 
 		try {
 			connection = ConnectionFactory.getConnection();
-			String sql = "SELECT * FROM order_list";
+			String sql = "SELECT * FROM orders";
 			statement = connection.createStatement();
 
 			resultSet = statement.executeQuery(sql);
@@ -66,7 +66,7 @@ public class OrderDAO {
 		PreparedStatement preparedStatement = null;
 		try {	
 			connection = ConnectionFactory.getConnection();
-			String sql = "INSERT INTO order_list (product_id, user_id, time, payment) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO orders (product_id, user_id, time, payment) VALUES (?,?,?,?)";
 			preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, productId);
 			preparedStatement.setInt(2, userId);
